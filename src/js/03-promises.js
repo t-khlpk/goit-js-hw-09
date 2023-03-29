@@ -29,14 +29,14 @@ function onPromiseCreate (e){
     let amount = Number(refs.amount.value);
   
     for (let i = 1; i <= amount; i += 1) {
-      let promiseDelay = valueDelay + step * i;
-  
-      createPromise(i, promiseDelay)
+      
+      createPromise(i, valueDelay)
         .then(({ position, delay }) => {
           console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
         })
         .catch(({ position, delay }) => {
           console.log(`❌ Rejected promise ${position} in ${delay}ms`);
         });
+        valueDelay += step
     }
 }

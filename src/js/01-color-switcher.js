@@ -10,6 +10,8 @@ const refs = {
   refs.btnStop.addEventListener('click', stopCgange);
 
   function startChange () {
+   refs.btnStart.disabled = true;
+   refs.btnStop.disabled = false;
    timerId = setInterval( () => (refs.body.style.background = getRandomHexColor()),1000)
   };
 

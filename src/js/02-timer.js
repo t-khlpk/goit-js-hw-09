@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
   btnStart: document.querySelector('[data-start]'),
@@ -22,7 +23,7 @@ const options = {
     minuteIncrement: 1,
     onClose: function (selectedDates) {
       if (selectedDates[0] <= new Date()) {
-        window.alert(
+        Notify.failure(
                 'Ooops... Please choose a date in the future!',
               
               );
